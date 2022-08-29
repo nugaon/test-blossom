@@ -1,6 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Blossom } from '@fairdatasociety/blossom'
+
+const blossom = new Blossom()
+
+blossom.fdpStorage.personalStorage.create('valmi').then((pod) => console.log('pod', pod)).catch(err => console.log('error at pod creation', err))
 
 function App() {
   return (
