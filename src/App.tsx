@@ -3,9 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import { Blossom } from '@fairdatasociety/blossom'
 
-const blossom = new Blossom()
+const blossom = new Blossom('ieecmehhdnadjhiniloaelillmahahlg')
 
-blossom.fdpStorage.personalStorage.create('valmi').then((pod) => console.log('pod', pod)).catch(err => console.log('error at pod creation', err))
+const dappId = blossom.dappId || 'valami'
+
+blossom.fdpStorage.personalStorage.create(dappId).then((pod) => console.log('pod', pod)).catch(err => console.log('error at pod creation', err))
+
+console.log('dappId', dappId)
 
 function App() {
   return (
